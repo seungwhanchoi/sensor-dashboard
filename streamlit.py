@@ -70,7 +70,7 @@ elif menu == "Data Analysis":
     data = sensor_data_dict.get(selected_date)
     error_processes = error_lot_df[error_lot_df["Date"] == pd.to_datetime(selected_date)]["Process"].tolist()
 
-    st.subheader(f"\U0001F4C8 {selected_date} 에러 공정 데이터")
+    st.subheader(f"\U0001F4C8 {selected_date} 데이터")
     if data is not None:
         data["Error"] = data["Process"].astype(str).isin(error_processes)
         data["Error"] = data["Error"].map({True: "Error", False: "Normal"})
